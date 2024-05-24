@@ -12,7 +12,7 @@ public class Radio {
 
 
     public void nextNumberRadiostation() {
-        if (numberCurrentRadiostation < 9) {
+        if (numberCurrentRadiostation > 0) {
             numberCurrentRadiostation = numberCurrentRadiostation + 1;
         }
     }
@@ -80,16 +80,6 @@ public class Radio {
 
     public void setToMinVolume() {
         currentVolume = 0;
-    }
-
-    public int setNextNumberCurrentRadiostation() {
-        if (numberCurrentRadiostation == maxRadiostation) {
-            numberCurrentRadiostation = minRadiostation;
-        }
-        {
-            return minRadiostation;
-        }
-
     }
 
     public int setPrevNumberCurrentRadiostation() {
