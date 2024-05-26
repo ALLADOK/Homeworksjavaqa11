@@ -20,7 +20,7 @@ public class Radio {
         this.currentVolume = minVolume + size;
     }
 
-    public void nextNumberRadiostation() {
+    public void next() {
         if (numberCurrentRadiostation > 0) {
             numberCurrentRadiostation = numberCurrentRadiostation + 1;
         }
@@ -32,7 +32,7 @@ public class Radio {
         }
     }
 
-    public void prevNumberRadiostation() {
+    public void prev() {
         if (numberCurrentRadiostation < 9) {
             numberCurrentRadiostation -= 1;
         }

@@ -54,7 +54,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(8);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 7;
         int actual = radio.getNumberCurrentRadiostation();
@@ -67,7 +67,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(2);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 1;
         int actual = radio.getNumberCurrentRadiostation();
@@ -80,7 +80,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 0;
         int actual = radio.getNumberCurrentRadiostation();
@@ -105,7 +105,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 9);
         radio.setNumberCurrentRadiostation(10);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getMaxRadiostation();
@@ -118,7 +118,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 9);
         radio.setNumberCurrentRadiostation(-1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getMaxRadiostation();
@@ -131,7 +131,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 9);
         radio.setNumberCurrentRadiostation(0);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getMaxRadiostation();
@@ -144,7 +144,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(-1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getNumberCurrentRadiostation();
@@ -288,7 +288,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(9);
 
-        radio.nextNumberRadiostation();
+        radio.next();
 
         int expected = 0;
         int actual = radio.getMinRadiostation();
@@ -340,7 +340,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(10);
 
-        radio.nextNumberRadiostation();
+        radio.next();
 
         int expected = 0;
         int actual = radio.getMinRadiostation();
@@ -366,7 +366,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(-1);
 
-        radio.nextNumberRadiostation();
+        radio.next();
 
         int expected = 0;
         int actual = radio.getMinRadiostation();
@@ -379,7 +379,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 9);
         radio.setNumberCurrentRadiostation(-1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getMaxRadiostation();
@@ -392,7 +392,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 0;
         int actual = radio.getNumberCurrentRadiostation();
@@ -406,7 +406,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(8);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 7;
         int actual = radio.getNumberCurrentRadiostation();
@@ -447,7 +447,7 @@ public class RadioTest {
         Radio radio = new Radio(0, 10);
         radio.setNumberCurrentRadiostation(-1);
 
-        radio.prevNumberRadiostation();
+        radio.prev();
 
         int expected = 9;
         int actual = radio.getNumberCurrentRadiostation();
