@@ -11,22 +11,27 @@ public class Radio {
     int maxRadiostation;
 
 
-
     public void next() {
-        if (numberCurrentRadiostation > 0) {
-            numberCurrentRadiostation = numberCurrentRadiostation + 1;
+        if (numberCurrentRadiostation == 9) {
+            numberCurrentRadiostation = 0;
+            return;
         }
+
+        numberCurrentRadiostation++;
+    }
+
+
+    public void prev() {
+        if (numberCurrentRadiostation == 0) {
+            numberCurrentRadiostation = 9;
+            return;
+        }
+        numberCurrentRadiostation--;
     }
 
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
-        }
-    }
-
-    public void prev() {
-        if (numberCurrentRadiostation < 9) {
-            numberCurrentRadiostation -= 1;
         }
     }
 
@@ -56,12 +61,11 @@ public class Radio {
 
     public void setNumberCurrentRadiostation(int newNumberCurrentRadiostation) {
         if (newNumberCurrentRadiostation < 0) {
-            newNumberCurrentRadiostation = 9;
+            return;
         }
         if (newNumberCurrentRadiostation > 9) {
-            newNumberCurrentRadiostation = 0;
+            return;
         }
-
         numberCurrentRadiostation = newNumberCurrentRadiostation;
     }
 
@@ -83,12 +87,4 @@ public class Radio {
         currentVolume = 0;
     }
 
-    public int setPrevNumberCurrentRadiostation() {
-        if (numberCurrentRadiostation == minRadiostation) {
-            numberCurrentRadiostation = maxRadiostation;
-        }
-        {
-            return maxRadiostation;
-        }
-    }
 }
