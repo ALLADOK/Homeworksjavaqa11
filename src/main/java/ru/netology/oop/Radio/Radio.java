@@ -2,45 +2,44 @@ package ru.netology.oop.Radio;
 
 public class Radio {
 
-    private int numberCurrentRadiostation;
+    private int maxRadiostation = 9;
+    private int minRadiostation = 0;
+    private int numberCurrentRadiostation = minRadiostation;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+    private int currentVolume = minVolume;
 
-    private int currentVolume;
 
-    int minRadiostation;
-
-    int maxRadiostation;
-
-
-    public void next() {
-        if (numberCurrentRadiostation == 9) {
-            numberCurrentRadiostation = 0;
-            return;
-        }
-
-        numberCurrentRadiostation++;
+    public Radio(){
+        this.maxRadiostation = 9;
     }
 
+    public Radio(int radiostationsCount){
+        this.maxRadiostation = radiostationsCount - 1;
+    }
+
+    public void next() {
+        if (numberCurrentRadiostation != maxRadiostation) {
+            this.numberCurrentRadiostation++;
+        } else {
+
+            this.numberCurrentRadiostation = minRadiostation;
+        }
+    }
 
     public void prev() {
-        if (numberCurrentRadiostation == 0) {
-            numberCurrentRadiostation = 9;
-            return;
+        if (numberCurrentRadiostation != minRadiostation) {
+           this.numberCurrentRadiostation--;
+        } else {
+           this.numberCurrentRadiostation = maxRadiostation;
         }
-        numberCurrentRadiostation--;
     }
 
     public void increaseVolume() {
-        if (currentVolume < 100) {
-            currentVolume = currentVolume + 1;
+        if (currentVolume != maxVolume) {
+            this.currentVolume++;
         }
-    }
 
-    public int getMinRadiostation() {
-        return numberCurrentRadiostation = 0;
-    }
-
-    public int getMaxRadiostation() {
-        return numberCurrentRadiostation = 9;
     }
 
     public int getNumberCurrentRadiostation() {
@@ -51,40 +50,24 @@ public class Radio {
         return currentVolume;
     }
 
-    public void setMaxRadiostation() {
-        numberCurrentRadiostation = 9;
-    }
-
-    public void setMinRadiostation() {
-        numberCurrentRadiostation = 0;
-    }
-
-    public void setNumberCurrentRadiostation(int newNumberCurrentRadiostation) {
-        if (newNumberCurrentRadiostation < 0) {
+    public void setNumberCurrentRadiostation(int numberCurrentRadiostation) {
+        if (numberCurrentRadiostation < minRadiostation) {
             return;
         }
-        if (newNumberCurrentRadiostation > 9) {
+        if (numberCurrentRadiostation > maxRadiostation) {
             return;
         }
-        numberCurrentRadiostation = newNumberCurrentRadiostation;
+        this.numberCurrentRadiostation = numberCurrentRadiostation;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < minVolume) {
             return;
         }
-        if (newCurrentVolume > 100) {
+        if (currentVolume > maxVolume) {
             return;
         }
-        currentVolume = newCurrentVolume;
-    }
-
-    public void setToMaxVolume() {
-        currentVolume = 100;
-    }
-
-    public void setToMinVolume() {
-        currentVolume = 0;
+       this.currentVolume = currentVolume;
     }
 
 }
